@@ -14,12 +14,6 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation("org.assertj:assertj-core:3.24.2")
-
-    // Mockito para JUnit 5
-    testImplementation("org.mockito:mockito-junit-jupiter:5.11.0")
-
-    // Core do Mockito
-    testImplementation("org.mockito:mockito-core:5.11.0")
 }
 
 tasks.test {
