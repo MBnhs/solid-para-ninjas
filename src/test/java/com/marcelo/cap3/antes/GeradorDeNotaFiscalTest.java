@@ -20,7 +20,7 @@ public class GeradorDeNotaFiscalTest {
     }
 
     @Test
-    @DisplayName("Deve calcular salário de DESENVOLVEDOR com 20% de desconto (acima do limite)")
+    @DisplayName("Deve gerar Nota Fiscal")
     void deveGerarNotaFiscal() {
 
         Fatura fatura = new Fatura(100);

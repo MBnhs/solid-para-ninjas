@@ -2,7 +2,7 @@ package com.marcelo.cap3.antes;
 
 public class NotaFiscal {
     private final double valor;
-    private final double imposto;
+    private double imposto;
 
     public NotaFiscal(double valor, double imposto) {
         this.valor = valor;
@@ -15,5 +15,9 @@ public class NotaFiscal {
 
     public double getImposto() {
         return imposto;
+    }
+
+    public void setImposto(double imposto) {
+        this.imposto = imposto;
     }
 }
