@@ -35,8 +35,8 @@ public class DespachadorDeNotasFiscaisTest {
     }
 
     @Test
-    @DisplayName("Deve despachar Nota Fiscal")
-    void deveDespacharNotaFiscal() {
+    @DisplayName("Deve despachar Nota Fiscal com envio por sedex 10")
+    void deveDespacharNotaFiscalComEnvioPorSedex10() {
 
         NotaFiscal nf = new NotaFiscal(200, 0.06);
 
@@ -47,6 +47,23 @@ public class DespachadorDeNotasFiscaisTest {
         verify(impostos).para(nf);
         verify(dao).persiste(nf);
         verify(correios).enviaPorSedex10(nf);
+        verify(lei).deveEntregarUrgente(nf);
+
+    }
+
+    @Test
+    @DisplayName("Deve despachar Nota Fiscal com envio por sedex 10")
+    void deveDespacharNotaFiscalComEnvioPorSedexComum() {
+
+        NotaFiscal nf = new NotaFiscal(100, 0.06);
+
+
+        when(lei.deveEntregarUrgente(any(NotaFiscal.class))).thenReturn(false);
+        despachador.processa(nf);
+
+        verify(impostos).para(nf);
+        verify(dao).persiste(nf);
+        verify(correios).enviaPorSedexComum(nf);
         verify(lei).deveEntregarUrgente(nf);
 
     }
