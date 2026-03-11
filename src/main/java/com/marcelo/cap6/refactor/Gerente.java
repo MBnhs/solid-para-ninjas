@@ -27,4 +27,18 @@ public class Gerente extends Funcionario {
 
         return super.bonus() + 500;
     }
+
+    @Override
+    protected double valeNatal() {
+        /*
+        Impossível de utilizar o atributo diretamente pois está como protected
+         */
+        // return valeRefeicao + 50.0;
+
+        /*
+        Chamando através do method da classe pai, mantendo comportamento e passando por
+        todas as validações necessárias presentes no method da classe pai.
+         */
+        return super.valeNatal() + 500.0;
+    }
 }
