@@ -16,6 +16,7 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation("org.assertj:assertj-core:3.24.2")
     testImplementation("org.mockito:mockito-inline:5.2.0")
+    implementation("org.seleniumhq.selenium:selenium-java:4.25.0")
 }
 
 tasks.test {

@@ -17,4 +17,8 @@ public class Retangulo {
     public int getY() {
         return y;
     }
+
+    public double calculaArea() {
+        return x * y;
+    }
 }
